@@ -1,0 +1,15 @@
+generator client {
+  provider   = "dart run orm"
+  engineType = "binary"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = "postgresql://postgres:1234@localhost:5432/dart_frog_learning?schema=public"
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model User {
+  email        String  @unique @id @map("_id")
+  name      String
+}
