@@ -10,6 +10,8 @@ dependencies:
   dart_frog: ^1.0.0
   json_annotation: ^4.8.1
   orm: 3.4.8
+  dart_frog_auth: ^1.1.0
+  dart_jsonwebtoken: ^2.13.0
 
 
 dev_dependencies:

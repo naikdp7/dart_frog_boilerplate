@@ -12,7 +12,10 @@ part 'prisma_client.g.dart';
 
 enum UserScalarFieldEnum implements _i1.PrismaEnum {
   email,
-  name;
+  firstName,
+  lastName,
+  userId,
+  password;
 
   @override
   String? get originalName => null;
@@ -44,7 +47,10 @@ class UserWhereInput implements _i1.JsonSerializable {
     this.OR,
     this.NOT,
     this.email,
-    this.name,
+    this.firstName,
+    this.lastName,
+    this.userId,
+    this.password,
   });
 
   factory UserWhereInput.fromJson(Map<String, dynamic> json) =>
@@ -58,7 +64,13 @@ class UserWhereInput implements _i1.JsonSerializable {
 
   final StringFilter? email;
 
-  final StringFilter? name;
+  final StringFilter? firstName;
+
+  final StringFilter? lastName;
+
+  final StringFilter? userId;
+
+  final StringFilter? password;
 
   @override
   Map<String, dynamic> toJson() => _$UserWhereInputToJson(this);
@@ -68,7 +80,10 @@ class UserWhereInput implements _i1.JsonSerializable {
 class UserOrderByWithRelationInput implements _i1.JsonSerializable {
   const UserOrderByWithRelationInput({
     this.email,
-    this.name,
+    this.firstName,
+    this.lastName,
+    this.userId,
+    this.password,
   });
 
   factory UserOrderByWithRelationInput.fromJson(Map<String, dynamic> json) =>
@@ -76,7 +91,13 @@ class UserOrderByWithRelationInput implements _i1.JsonSerializable {
 
   final SortOrder? email;
 
-  final SortOrder? name;
+  final SortOrder? firstName;
+
+  final SortOrder? lastName;
+
+  final SortOrder? userId;
+
+  final SortOrder? password;
 
   @override
   Map<String, dynamic> toJson() => _$UserOrderByWithRelationInputToJson(this);
@@ -86,10 +107,13 @@ class UserOrderByWithRelationInput implements _i1.JsonSerializable {
 class UserWhereUniqueInput implements _i1.JsonSerializable {
   const UserWhereUniqueInput({
     this.email,
+    this.userId,
     this.AND,
     this.OR,
     this.NOT,
-    this.name,
+    this.firstName,
+    this.lastName,
+    this.password,
   });
 
   factory UserWhereUniqueInput.fromJson(Map<String, dynamic> json) =>
@@ -97,13 +121,19 @@ class UserWhereUniqueInput implements _i1.JsonSerializable {
 
   final String? email;
 
+  final String? userId;
+
   final Iterable<UserWhereInput>? AND;
 
   final Iterable<UserWhereInput>? OR;
 
   final Iterable<UserWhereInput>? NOT;
 
-  final StringFilter? name;
+  final StringFilter? firstName;
+
+  final StringFilter? lastName;
+
+  final StringFilter? password;
 
   @override
   Map<String, dynamic> toJson() => _$UserWhereUniqueInputToJson(this);
@@ -113,7 +143,10 @@ class UserWhereUniqueInput implements _i1.JsonSerializable {
 class UserOrderByWithAggregationInput implements _i1.JsonSerializable {
   const UserOrderByWithAggregationInput({
     this.email,
-    this.name,
+    this.firstName,
+    this.lastName,
+    this.userId,
+    this.password,
     this.$count,
     this.$max,
     this.$min,
@@ -124,7 +157,13 @@ class UserOrderByWithAggregationInput implements _i1.JsonSerializable {
 
   final SortOrder? email;
 
-  final SortOrder? name;
+  final SortOrder? firstName;
+
+  final SortOrder? lastName;
+
+  final SortOrder? userId;
+
+  final SortOrder? password;
 
   @JsonKey(name: r'_count')
   final UserCountOrderByAggregateInput? $count;
@@ -147,7 +186,10 @@ class UserScalarWhereWithAggregatesInput implements _i1.JsonSerializable {
     this.OR,
     this.NOT,
     this.email,
-    this.name,
+    this.firstName,
+    this.lastName,
+    this.userId,
+    this.password,
   });
 
   factory UserScalarWhereWithAggregatesInput.fromJson(
@@ -162,7 +204,13 @@ class UserScalarWhereWithAggregatesInput implements _i1.JsonSerializable {
 
   final StringWithAggregatesFilter? email;
 
-  final StringWithAggregatesFilter? name;
+  final StringWithAggregatesFilter? firstName;
+
+  final StringWithAggregatesFilter? lastName;
+
+  final StringWithAggregatesFilter? userId;
+
+  final StringWithAggregatesFilter? password;
 
   @override
   Map<String, dynamic> toJson() =>
@@ -173,7 +221,10 @@ class UserScalarWhereWithAggregatesInput implements _i1.JsonSerializable {
 class UserCreateInput implements _i1.JsonSerializable {
   const UserCreateInput({
     required this.email,
-    required this.name,
+    required this.firstName,
+    required this.lastName,
+    required this.userId,
+    required this.password,
   });
 
   factory UserCreateInput.fromJson(Map<String, dynamic> json) =>
@@ -181,7 +232,13 @@ class UserCreateInput implements _i1.JsonSerializable {
 
   final String email;
 
-  final String name;
+  final String firstName;
+
+  final String lastName;
+
+  final String userId;
+
+  final String password;
 
   @override
   Map<String, dynamic> toJson() => _$UserCreateInputToJson(this);
@@ -191,7 +248,10 @@ class UserCreateInput implements _i1.JsonSerializable {
 class UserUncheckedCreateInput implements _i1.JsonSerializable {
   const UserUncheckedCreateInput({
     required this.email,
-    required this.name,
+    required this.firstName,
+    required this.lastName,
+    required this.userId,
+    required this.password,
   });
 
   factory UserUncheckedCreateInput.fromJson(Map<String, dynamic> json) =>
@@ -199,7 +259,13 @@ class UserUncheckedCreateInput implements _i1.JsonSerializable {
 
   final String email;
 
-  final String name;
+  final String firstName;
+
+  final String lastName;
+
+  final String userId;
+
+  final String password;
 
   @override
   Map<String, dynamic> toJson() => _$UserUncheckedCreateInputToJson(this);
@@ -209,7 +275,10 @@ class UserUncheckedCreateInput implements _i1.JsonSerializable {
 class UserUpdateInput implements _i1.JsonSerializable {
   const UserUpdateInput({
     this.email,
-    this.name,
+    this.firstName,
+    this.lastName,
+    this.userId,
+    this.password,
   });
 
   factory UserUpdateInput.fromJson(Map<String, dynamic> json) =>
@@ -217,7 +286,13 @@ class UserUpdateInput implements _i1.JsonSerializable {
 
   final StringFieldUpdateOperationsInput? email;
 
-  final StringFieldUpdateOperationsInput? name;
+  final StringFieldUpdateOperationsInput? firstName;
+
+  final StringFieldUpdateOperationsInput? lastName;
+
+  final StringFieldUpdateOperationsInput? userId;
+
+  final StringFieldUpdateOperationsInput? password;
 
   @override
   Map<String, dynamic> toJson() => _$UserUpdateInputToJson(this);
@@ -227,7 +302,10 @@ class UserUpdateInput implements _i1.JsonSerializable {
 class UserUncheckedUpdateInput implements _i1.JsonSerializable {
   const UserUncheckedUpdateInput({
     this.email,
-    this.name,
+    this.firstName,
+    this.lastName,
+    this.userId,
+    this.password,
   });
 
   factory UserUncheckedUpdateInput.fromJson(Map<String, dynamic> json) =>
@@ -235,7 +313,13 @@ class UserUncheckedUpdateInput implements _i1.JsonSerializable {
 
   final StringFieldUpdateOperationsInput? email;
 
-  final StringFieldUpdateOperationsInput? name;
+  final StringFieldUpdateOperationsInput? firstName;
+
+  final StringFieldUpdateOperationsInput? lastName;
+
+  final StringFieldUpdateOperationsInput? userId;
+
+  final StringFieldUpdateOperationsInput? password;
 
   @override
   Map<String, dynamic> toJson() => _$UserUncheckedUpdateInputToJson(this);
@@ -245,7 +329,10 @@ class UserUncheckedUpdateInput implements _i1.JsonSerializable {
 class UserCreateManyInput implements _i1.JsonSerializable {
   const UserCreateManyInput({
     required this.email,
-    required this.name,
+    required this.firstName,
+    required this.lastName,
+    required this.userId,
+    required this.password,
   });
 
   factory UserCreateManyInput.fromJson(Map<String, dynamic> json) =>
@@ -253,7 +340,13 @@ class UserCreateManyInput implements _i1.JsonSerializable {
 
   final String email;
 
-  final String name;
+  final String firstName;
+
+  final String lastName;
+
+  final String userId;
+
+  final String password;
 
   @override
   Map<String, dynamic> toJson() => _$UserCreateManyInputToJson(this);
@@ -263,7 +356,10 @@ class UserCreateManyInput implements _i1.JsonSerializable {
 class UserUpdateManyMutationInput implements _i1.JsonSerializable {
   const UserUpdateManyMutationInput({
     this.email,
-    this.name,
+    this.firstName,
+    this.lastName,
+    this.userId,
+    this.password,
   });
 
   factory UserUpdateManyMutationInput.fromJson(Map<String, dynamic> json) =>
@@ -271,7 +367,13 @@ class UserUpdateManyMutationInput implements _i1.JsonSerializable {
 
   final StringFieldUpdateOperationsInput? email;
 
-  final StringFieldUpdateOperationsInput? name;
+  final StringFieldUpdateOperationsInput? firstName;
+
+  final StringFieldUpdateOperationsInput? lastName;
+
+  final StringFieldUpdateOperationsInput? userId;
+
+  final StringFieldUpdateOperationsInput? password;
 
   @override
   Map<String, dynamic> toJson() => _$UserUpdateManyMutationInputToJson(this);
@@ -281,7 +383,10 @@ class UserUpdateManyMutationInput implements _i1.JsonSerializable {
 class UserUncheckedUpdateManyInput implements _i1.JsonSerializable {
   const UserUncheckedUpdateManyInput({
     this.email,
-    this.name,
+    this.firstName,
+    this.lastName,
+    this.userId,
+    this.password,
   });
 
   factory UserUncheckedUpdateManyInput.fromJson(Map<String, dynamic> json) =>
@@ -289,7 +394,13 @@ class UserUncheckedUpdateManyInput implements _i1.JsonSerializable {
 
   final StringFieldUpdateOperationsInput? email;
 
-  final StringFieldUpdateOperationsInput? name;
+  final StringFieldUpdateOperationsInput? firstName;
+
+  final StringFieldUpdateOperationsInput? lastName;
+
+  final StringFieldUpdateOperationsInput? userId;
+
+  final StringFieldUpdateOperationsInput? password;
 
   @override
   Map<String, dynamic> toJson() => _$UserUncheckedUpdateManyInputToJson(this);
@@ -348,7 +459,10 @@ class StringFilter implements _i1.JsonSerializable {
 class UserCountOrderByAggregateInput implements _i1.JsonSerializable {
   const UserCountOrderByAggregateInput({
     this.email,
-    this.name,
+    this.firstName,
+    this.lastName,
+    this.userId,
+    this.password,
   });
 
   factory UserCountOrderByAggregateInput.fromJson(Map<String, dynamic> json) =>
@@ -356,7 +470,13 @@ class UserCountOrderByAggregateInput implements _i1.JsonSerializable {
 
   final SortOrder? email;
 
-  final SortOrder? name;
+  final SortOrder? firstName;
+
+  final SortOrder? lastName;
+
+  final SortOrder? userId;
+
+  final SortOrder? password;
 
   @override
   Map<String, dynamic> toJson() => _$UserCountOrderByAggregateInputToJson(this);
@@ -366,7 +486,10 @@ class UserCountOrderByAggregateInput implements _i1.JsonSerializable {
 class UserMaxOrderByAggregateInput implements _i1.JsonSerializable {
   const UserMaxOrderByAggregateInput({
     this.email,
-    this.name,
+    this.firstName,
+    this.lastName,
+    this.userId,
+    this.password,
   });
 
   factory UserMaxOrderByAggregateInput.fromJson(Map<String, dynamic> json) =>
@@ -374,7 +497,13 @@ class UserMaxOrderByAggregateInput implements _i1.JsonSerializable {
 
   final SortOrder? email;
 
-  final SortOrder? name;
+  final SortOrder? firstName;
+
+  final SortOrder? lastName;
+
+  final SortOrder? userId;
+
+  final SortOrder? password;
 
   @override
   Map<String, dynamic> toJson() => _$UserMaxOrderByAggregateInputToJson(this);
@@ -384,7 +513,10 @@ class UserMaxOrderByAggregateInput implements _i1.JsonSerializable {
 class UserMinOrderByAggregateInput implements _i1.JsonSerializable {
   const UserMinOrderByAggregateInput({
     this.email,
-    this.name,
+    this.firstName,
+    this.lastName,
+    this.userId,
+    this.password,
   });
 
   factory UserMinOrderByAggregateInput.fromJson(Map<String, dynamic> json) =>
@@ -392,7 +524,13 @@ class UserMinOrderByAggregateInput implements _i1.JsonSerializable {
 
   final SortOrder? email;
 
-  final SortOrder? name;
+  final SortOrder? firstName;
+
+  final SortOrder? lastName;
+
+  final SortOrder? userId;
+
+  final SortOrder? password;
 
   @override
   Map<String, dynamic> toJson() => _$UserMinOrderByAggregateInputToJson(this);
@@ -621,14 +759,23 @@ class NestedIntFilter implements _i1.JsonSerializable {
 class User implements _i1.JsonSerializable {
   const User({
     required this.email,
-    required this.name,
+    required this.firstName,
+    required this.lastName,
+    required this.userId,
+    required this.password,
   });
 
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
 
   final String email;
 
-  final String name;
+  final String firstName;
+
+  final String lastName;
+
+  final String userId;
+
+  final String password;
 
   @override
   Map<String, dynamic> toJson() => _$UserToJson(this);
@@ -1171,7 +1318,10 @@ extension UserModelDelegateExtension on _i1.ModelDelegate<User> {
 class UserGroupByOutputType implements _i1.JsonSerializable {
   const UserGroupByOutputType({
     this.email,
-    this.name,
+    this.firstName,
+    this.lastName,
+    this.userId,
+    this.password,
   });
 
   factory UserGroupByOutputType.fromJson(Map<String, dynamic> json) =>
@@ -1179,7 +1329,13 @@ class UserGroupByOutputType implements _i1.JsonSerializable {
 
   final String? email;
 
-  final String? name;
+  final String? firstName;
+
+  final String? lastName;
+
+  final String? userId;
+
+  final String? password;
 
   @override
   Map<String, dynamic> toJson() => _$UserGroupByOutputTypeToJson(this);
@@ -1261,15 +1417,54 @@ class UserCountAggregateOutputType {
     return query(const []).then((value) => (value as int));
   }
 
-  Future<int> name() {
+  Future<int> firstName() {
     final query = _i1.PrismaFluent.queryBuilder(
       query: (fields) => $query([
         _i2.GraphQLField(
-          r'name',
+          r'firstName',
           fields: fields,
         )
       ]),
-      key: r'name',
+      key: r'firstName',
+    );
+    return query(const []).then((value) => (value as int));
+  }
+
+  Future<int> lastName() {
+    final query = _i1.PrismaFluent.queryBuilder(
+      query: (fields) => $query([
+        _i2.GraphQLField(
+          r'lastName',
+          fields: fields,
+        )
+      ]),
+      key: r'lastName',
+    );
+    return query(const []).then((value) => (value as int));
+  }
+
+  Future<int> userId() {
+    final query = _i1.PrismaFluent.queryBuilder(
+      query: (fields) => $query([
+        _i2.GraphQLField(
+          r'userId',
+          fields: fields,
+        )
+      ]),
+      key: r'userId',
+    );
+    return query(const []).then((value) => (value as int));
+  }
+
+  Future<int> password() {
+    final query = _i1.PrismaFluent.queryBuilder(
+      query: (fields) => $query([
+        _i2.GraphQLField(
+          r'password',
+          fields: fields,
+        )
+      ]),
+      key: r'password',
     );
     return query(const []).then((value) => (value as int));
   }
@@ -1306,15 +1501,54 @@ class UserMinAggregateOutputType {
     return query(const []).then((value) => (value as String?));
   }
 
-  Future<String?> name() {
+  Future<String?> firstName() {
     final query = _i1.PrismaFluent.queryBuilder(
       query: (fields) => $query([
         _i2.GraphQLField(
-          r'name',
+          r'firstName',
           fields: fields,
         )
       ]),
-      key: r'name',
+      key: r'firstName',
+    );
+    return query(const []).then((value) => (value as String?));
+  }
+
+  Future<String?> lastName() {
+    final query = _i1.PrismaFluent.queryBuilder(
+      query: (fields) => $query([
+        _i2.GraphQLField(
+          r'lastName',
+          fields: fields,
+        )
+      ]),
+      key: r'lastName',
+    );
+    return query(const []).then((value) => (value as String?));
+  }
+
+  Future<String?> userId() {
+    final query = _i1.PrismaFluent.queryBuilder(
+      query: (fields) => $query([
+        _i2.GraphQLField(
+          r'userId',
+          fields: fields,
+        )
+      ]),
+      key: r'userId',
+    );
+    return query(const []).then((value) => (value as String?));
+  }
+
+  Future<String?> password() {
+    final query = _i1.PrismaFluent.queryBuilder(
+      query: (fields) => $query([
+        _i2.GraphQLField(
+          r'password',
+          fields: fields,
+        )
+      ]),
+      key: r'password',
     );
     return query(const []).then((value) => (value as String?));
   }
@@ -1338,15 +1572,54 @@ class UserMaxAggregateOutputType {
     return query(const []).then((value) => (value as String?));
   }
 
-  Future<String?> name() {
+  Future<String?> firstName() {
     final query = _i1.PrismaFluent.queryBuilder(
       query: (fields) => $query([
         _i2.GraphQLField(
-          r'name',
+          r'firstName',
           fields: fields,
         )
       ]),
-      key: r'name',
+      key: r'firstName',
+    );
+    return query(const []).then((value) => (value as String?));
+  }
+
+  Future<String?> lastName() {
+    final query = _i1.PrismaFluent.queryBuilder(
+      query: (fields) => $query([
+        _i2.GraphQLField(
+          r'lastName',
+          fields: fields,
+        )
+      ]),
+      key: r'lastName',
+    );
+    return query(const []).then((value) => (value as String?));
+  }
+
+  Future<String?> userId() {
+    final query = _i1.PrismaFluent.queryBuilder(
+      query: (fields) => $query([
+        _i2.GraphQLField(
+          r'userId',
+          fields: fields,
+        )
+      ]),
+      key: r'userId',
+    );
+    return query(const []).then((value) => (value as String?));
+  }
+
+  Future<String?> password() {
+    final query = _i1.PrismaFluent.queryBuilder(
+      query: (fields) => $query([
+        _i2.GraphQLField(
+          r'password',
+          fields: fields,
+        )
+      ]),
+      key: r'password',
     );
     return query(const []).then((value) => (value as String?));
   }
@@ -1394,7 +1667,7 @@ class PrismaClient extends _i1.BasePrismaClient<PrismaClient> {
     final engine = _i5.BinaryEngine(
       logger: logger,
       schema:
-          r'Z2VuZXJhdG9yIGNsaWVudCB7CiAgcHJvdmlkZXIgICA9ICJkYXJ0IHJ1biBvcm0iCiAgZW5naW5lVHlwZSA9ICJiaW5hcnkiCn0KCmRhdGFzb3VyY2UgZGIgewogIHByb3ZpZGVyID0gInBvc3RncmVzcWwiCiAgdXJsICAgICAgPSAicG9zdGdyZXNxbDovL3Bvc3RncmVzOjEyMzRAbG9jYWxob3N0OjU0MzIvZGFydF9mcm9nX2xlYXJuaW5nP3NjaGVtYT1wdWJsaWMiCn0KCi8vLyBUaGUgdW5kZXJseWluZyB0YWJsZSBkb2VzIG5vdCBjb250YWluIGEgdmFsaWQgdW5pcXVlIGlkZW50aWZpZXIgYW5kIGNhbiB0aGVyZWZvcmUgY3VycmVudGx5IG5vdCBiZSBoYW5kbGVkIGJ5IFByaXNtYSBDbGllbnQuCm1vZGVsIFVzZXIgewogIGVtYWlsICAgICAgICBTdHJpbmcgIEB1bmlxdWUgQGlkIEBtYXAoIl9pZCIpCiAgbmFtZSAgICAgIFN0cmluZwp9Cg==',
+          r'Z2VuZXJhdG9yIGNsaWVudCB7CiAgcHJvdmlkZXIgICA9ICJkYXJ0IHJ1biBvcm0iCiAgZW5naW5lVHlwZSA9ICJiaW5hcnkiCn0KCmRhdGFzb3VyY2UgZGIgewogIHByb3ZpZGVyID0gInBvc3RncmVzcWwiCiAgdXJsICAgICAgPSAicG9zdGdyZXNxbDovL3Bvc3RncmVzOjEyMzRAbG9jYWxob3N0OjU0MzIvZGFydF9mcm9nX2xlYXJuaW5nP3NjaGVtYT1wdWJsaWMiCn0KCi8vLyBUaGUgdW5kZXJseWluZyB0YWJsZSBkb2VzIG5vdCBjb250YWluIGEgdmFsaWQgdW5pcXVlIGlkZW50aWZpZXIgYW5kIGNhbiB0aGVyZWZvcmUgY3VycmVudGx5IG5vdCBiZSBoYW5kbGVkIGJ5IFByaXNtYSBDbGllbnQuCm1vZGVsIFVzZXIgewogIGVtYWlsICAgICAgICBTdHJpbmcgIEB1bmlxdWUgQGlkIEBtYXAoIl9pZCIpCiAgZmlyc3ROYW1lICAgICAgU3RyaW5nCiAgbGFzdE5hbWUgICAgICBTdHJpbmcKICB1c2VySWQgICAgICBTdHJpbmcgIEB1bmlxdWUKICBwYXNzd29yZCAgU3RyaW5nCn0K',
       datasources: datasources?.toJson().cast() ?? const {},
       executable:
           r'/Users/mac/.npm/_npx/2778af9cee32ff87/node_modules/prisma/query-engine-darwin-arm64',
