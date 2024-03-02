@@ -11,5 +11,8 @@ datasource db {
 /// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
 model User {
   email        String  @unique @id @map("_id")
-  name      String
+  firstName      String
+  lastName      String
+  userId      String  @unique
+  password  String
 }

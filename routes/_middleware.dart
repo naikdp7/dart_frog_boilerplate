@@ -9,6 +9,9 @@ Handler middleware(Handler handler) {
         provideAuthRequestHandler(),
       )
       .use(
+        provideJWTHandler(),
+      )
+      .use(
         provideUserRepository(),
       )
       .use(
